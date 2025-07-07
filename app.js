@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend URL
+  origin: 'https://cybermind-frontend-9m53.onrender.com', // Replace with your frontend URL
   credentials: true
 }));
 
