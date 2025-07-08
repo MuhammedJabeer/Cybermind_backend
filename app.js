@@ -16,11 +16,19 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+
+app.use(cors({
+  origin: 'https://cybermind-frontend-9m53.onrender.com', 
+  credentials: true
+}));
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/', jobRouter);
 
 
@@ -29,10 +37,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.use(cors({
-  origin: 'https://cybermind-frontend-9m53.onrender.com', 
-  credentials: true
-}));
+
 
 
 const port=process.env.PORT
