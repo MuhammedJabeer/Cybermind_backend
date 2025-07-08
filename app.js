@@ -21,7 +21,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
 app.use('/', jobRouter);
 
 
@@ -31,7 +30,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(cors({
-  origin: 'https://cybermind-frontend-9m53.onrender.com', // Replace with your frontend URL
+  origin: 'https://cybermind-frontend-9m53.onrender.com', 
   credentials: true
 }));
 
